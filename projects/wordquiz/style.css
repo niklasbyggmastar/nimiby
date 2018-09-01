@@ -1,0 +1,28 @@
+body{
+  background-color: rgb(35,35,35);
+}
+hr{
+  height: 0.9px;
+  color: rgb(35,35,35);
+  background-color: rgb(35,35,35);
+  border: none;
+}
+/*.showBtn{
+  float:right;
+}*/
+
+@media screen and (max-width:1000px){
+  .container{
+    width: 95vw;
+    margin-top:20vh;
+    margin-bottom:40px;
+  }
+}
+
+@media screen and (min-width:1000px){
+  .container{
+    width: 40vw;
+    margin-top:20vh;
+    margin-bottom:40px;
+  }
+}

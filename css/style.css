@@ -1,0 +1,135 @@
+#loading{
+  border: 10px solid rgb(50,50,50);
+  border-radius: 50%;
+  border-top: 10px solid rgb(35,71,199);
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -60px 0 0 -60px;
+  z-index: 1;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.header-content-inner{
+  width: 120px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -60px 0 0 -60px;
+}
+body{
+  background-color: rgb(24,24,24);
+  overflow-x: hidden;
+}
+header{
+  height: 100vh;
+}
+.project_small{
+  border:1px solid rgb(150,150,150);
+}
+#homeHeading{
+  font-size: 65px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  user-select: none;
+}
+#homeHeading:hover{
+  cursor: default;
+}
+.row{
+  color:rgb(153,153,153);
+}
+.container{
+  height: 100vh;
+}
+a{
+  color: rgb(153,153,153) !important;
+  text-decoration: none !important;
+}
+#myNavbar{
+  color: rgb(153,153,153) !important;
+  text-decoration: none !important;
+}
+.profile_pic{
+  width: 70%;
+}
+.contactdiv{
+  height: 60vh !important;
+}
+
+@media screen and (max-width:995px){
+  .profile_pic{
+    width: 50%;
+  }
+}
+
+@media screen and (max-width:430px){
+  .contactdiv{
+    height: 20vh !important;
+  }
+  .profile_pic{
+    width: 60% !important;
+  }
+}
+
+@media screen and (max-height:1200px) and (min-height:900px) {
+  .container{
+    height: 70vh !important;
+  }
+  .contactdiv{
+    height: 50vh !important;
+  }
+}
+
+@media screen and (min-height:1200px) {
+  .container{
+    height: 50vh !important;
+  }
+  .contactdiv{
+    height: 20vh !important;
+  }
+}
+
+@media screen and (min-width:430px){
+  .navbar-header{
+    border-right: 1px solid white;
+  }
+  .projects{
+    opacity: 1;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+    margin-bottom: 15px;
+  }
+  .projects:hover{
+    opacity: 0.3;
+  }
+  a h3{
+    opacity: 0;
+    position: absolute;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-60%);
+    user-select: none;
+  }
+  a:hover h3{
+    opacity: 1;
+  }
+}

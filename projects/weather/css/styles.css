@@ -1,0 +1,82 @@
+body{
+  background-image:url('/projects/weather/img/back2.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#weatherapp{
+  user-select: none;
+  cursor: default;
+}
+
+.info{
+  display: none;
+  border-radius: 20px;
+  padding: 15px;
+}
+
+hr{
+  margin-bottom: 0px;
+}
+
+
+#back_btn:hover{
+  user-select: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#get_location:hover{
+  user-select: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+img{
+  display: inline;
+  width: 62px;
+  margin-top: -4px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+#city_name{
+  display: inline;
+}
+#weather_img{
+  display: none;
+}
+
+#loading{
+  color: rgba(90,90,90,.42);
+  font-size: 80px;
+}
+
+
+
+@media screen and (max-width:420px){ /*------------MOBILE-------------*/
+  .container{
+    height:50vh;
+    margin-top:26vh;
+  }
+  #mobile{
+    display: inline;
+  }
+}
+
+@media screen and (min-width:420px){ /*------------DESKTOP-------------*/
+  body{
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+  }
+  .container{
+    height:50vh;
+    margin-top:21vh;
+  }
+  #mobile{
+    display: none;
+  }
+}

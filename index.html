@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>nimiby</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.localscroll/1.4.0/jquery.localScroll.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script>
+    <script src="https://use.fontawesome.com/ed0dce6850.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="js/script.js"></script>
+    <meta name="viewport" content="width=device-width height=device-height, initial-scale=1.0">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="rgb(24,24,24)">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="rgb(24,24,24)">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body ng-app="app" ng-controller="ctrl">
+    <div id="loading"></div>
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title text-center">{{ app_title }}</h3>
+          </div>
+          <div class="modal-body">
+            <p>{{ app_description }}</p>
+            <img class='img img-responsive' ng-src='{{ app_img }}' alt='Image'>
+          </div>
+          <div class="modal-footer">
+            <a href="{{ app_link }}"><button class="btn btn-success">{{ open_app_text }}</button></a>
+            <button class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='container-fluid' style="display:none">
+      <nav class='navbar navbar-inverse navbar-fixed-top'>
+        <div class='navbar-header' id='headerNav'>
+          <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#myNavbar'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </button>
+          <a class='navbar-brand' href='#header'>nimiby</a>
+        </div>
+        <div class='collapse navbar-collapse' id='myNavbar'>
+          <ul class='nav navbar-nav'>
+            <li><a href='#info'>About</a></li>
+            <li><a href='#projects'>Projects</a></li>
+            <li><a href='#contact'>Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <header id='header'>
+        <div class='header-content container-fluid' style="display:none;margin-left:-30px;" id="welcomeContent">
+          <div class='header-content-inner text-center'>
+            <h1 id='homeHeading'>Welcome!</h1>
+          </div>
+        </div>
+      </header>
+      <section id='info'>
+        <div class='container'>
+          <div class='col-md-8 col-md-offset-2 col-xs-12 text-center'>
+            <div class='row'>
+              <br><br>
+              <h2 class='section-heading'>About</h2>
+              <hr class='light'>
+              <div class='col-md-6 col-xs-12 text-center'>
+                <h3 id="name">Niklas Byggmästar</h3>
+                <h4>Turku, Finland</h4>
+                <h4>Studying Information Technology</h4>
+                <h4>at University of Turku</h4>
+                <hr>
+                <h3>Tools I use the most</h3>
+                <h4>HTML5, CSS3, Javascript, jQuery</h4>
+                <h4>Java, Android, Python</h4>
+                <!--<h3>Tools I have some knowledge of</h3>
+                <h4>Angular, NodeJS, Phaser.js, p5.js</h4>-->
+              </div>
+              <div class='col-md-6 col-xs-12'>
+                <img class='img img-thumbnail img-responsive profile_pic' src='img/niklasbyggmastar.JPG' alt='Niklas Byggmästar'>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id='projects'>
+        <div class='container'>
+          <div class='col-md-8 col-md-offset-2 col-xs-12 text-center'>
+            <div class='row'>
+              <br><br>
+              <h2 class='section-heading'>Projects</h2>
+              <hr class='light'>
+              <div class='col-md-6 text-center'>
+                <a href="#" data-target="#myModal" data-toggle="modal" ng-click="setData('MovieApp', 'Used: HTML5, CSS3, Django, (AngularJS), jQuery', 'img/projects/finnkinoapp.png', 'https://finnkino.herokuapp.com/movieapp/', 'Open')">
+                  <h3>MovieApp</h3>
+                  <img class='img img-responsive projects' src='img/projects/finnkinoapp.png' alt='MovieApp'>
+                </a>
+              </div>
+              <div class='col-md-6 text-center'>
+                <a href="#" data-target="#myModal" data-toggle="modal" ng-click="setData('TODO', 'Used: HTML5, CSS3, Django', 'img/projects/todo.png', 'https://nmb-todoapp.herokuapp.com/todo/', 'Open')">
+                  <h3>TODO</h3>
+                  <img class='img img-responsive projects' src='img/projects/todo.png' alt='TODO'>
+                </a>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-md-6 text-center'>
+                  <a href="#" data-target="#myModal" data-toggle="modal" ng-click="setData('WeatherApp', 'Used: HTML5, CSS3, jQuery', 'img/projects/weather.png', 'projects/weather/index.html', 'Open')">
+                  <h3>WeatherApp</h3>
+                  <img class='img img-responsive projects' src='img/projects/weather.png' alt='WeatherApp'>
+                </a>
+              </div>
+              <div class='col-md-6 text-center'>
+                  <a href="#" data-target="#myModal" data-toggle="modal" ng-click="setData('Chat.io', 'Used: HTML5, CSS3, jQuery, Socket.io, NodeJS', 'img/projects/chat.png', 'https://nmb-chat.herokuapp.com/', 'Open')">
+                  <h3>Chat.io</h3>
+                  <img class='img img-responsive projects' src='img/projects/chat.png' alt='Chat.io'>
+                </a>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-md-6 text-center'>
+                  <a href="#" data-target="#myModal" data-toggle="modal" ng-click="setData('Pingpong', 'Used: HTML5, Phaser.js, Socket.io, NodeJS', 'img/projects/pingpong.png', 'https://nmb-pingpong.herokuapp.com/', 'Open')">
+                  <h3>Pingpong</h3>
+                  <img class='img img-responsive projects project_small' src='img/projects/pingpong.png' alt='Pingpong'>
+                </a>
+              </div>
+              <div class='col-md-6 text-center'>
+                  <a href="#" data-target="#myModal" data-toggle="modal" ng-click="setData('Instagram', 'Used: HTML5, CSS3, Django, jQuery', 'img/projects/ig.png', 'https://nmb-instagram.herokuapp.com/', 'Open')">
+                  <h3>Instagram</h3>
+                  <img class='img img-responsive projects' src='img/projects/ig.png' alt='Instagram'>
+                </a>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='col-md-6 text-center'>
+                  <a href="#" data-target="#myModal" data-toggle="modal" ng-click="setData('WeatherApp (Android)', 'Used: Java', 'img/projects/androidWeather.png', 'projects/androidWeather/app-debug.apk', 'Download')">
+                  <h3>WeatherApp (Android)</h3>
+                  <img class='img img-responsive projects project_small' src='img/projects/androidWeather.png' alt='AndroidWeather'>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class='container contactdiv'>
+          <div class='col-md-8 col-md-offset-2 col-xs-12 text-center'>
+            <div class='row'>
+              <br><br>
+              <h2 class='section-heading' id='contact'>Contact</h2>
+              <hr class='light'>
+              <div class='col-md-6'>
+                <i class='fa fa-envelope-o fa-2x' aria-hidden='true'></i>
+                <h4>niklas.byggmastar(a)gmail.com</h4>
+              </div>
+              <div class='col-md-6'>
+                <i class='fa fa-phone fa-2x' aria-hidden='true'></i>
+                <h4>+358456332588</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div class="text-center col-xs-12">
+            <i class='fa fa-copyright' aria-hidden='true'></i> Niklas Byggmästar 2018
+        </div>
+      </footer>
+    </div>
+<!--------------------------------------------->
+      <script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.10/p5.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/addons/p5.dom.min.js"></script>
+      <script src="js/space.js"></script>
+      <script src="js/Star.js"></script>
+  </body>
+</html>
