@@ -71,6 +71,7 @@ a{
   height: 60vh !important;
 }
 
+
 @media screen and (max-width:995px){
   .profile_pic{
     width: 50%;
